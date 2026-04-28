@@ -1,0 +1,279 @@
+/* James Fisher and Sons plc — Design Tokens
+ * Source: JF Interim Brand Guidelines, June 2025
+ * Primary typeface: Helvetica Neue (print/marketing)
+ * Digital typeface: Arial (web, intranet, email, PowerPoint)
+ * Licensed Helvetica fonts live in fonts/ and are wired via @font-face below.
+ */
+
+/* ===================== WEB FONTS ===================== */
+@font-face {
+  font-family: "Helvetica JF";
+  src: url("fonts/Helvetica-Light-05.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica JF";
+  src: url("fonts/Helvetica-LightOblique-06.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica JF";
+  src: url("fonts/Helvetica-01.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica JF";
+  src: url("fonts/Helvetica-Oblique-03.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica JF";
+  src: url("fonts/Helvetica-Bold-02.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica JF";
+  src: url("fonts/Helvetica-BoldOblique-04.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* ---------- BRAND COLORS ---------- */
+  /* Primary — JFS Blue (PMS 641) */
+  --jfs-blue:        #0065a4;
+  --jfs-blue-80:     #3384b6;
+  --jfs-blue-60:     #66a3c8;
+  --jfs-blue-40:     #99c1db;
+  --jfs-blue-20:     #cce0ed;
+
+  /* Secondary — Light Blue (PMS 2905) */
+  --jfs-lightblue:   #92c5eb;
+  --jfs-lightblue-80:#a8d1ef;
+  --jfs-lightblue-60:#bdddf3;
+  --jfs-lightblue-40:#d3e8f7;
+  --jfs-lightblue-20:#e9f3fb;
+
+  /* Accent — Yellow (PMS Yellow) used for highlights/graphic elements only */
+  --jfs-yellow:      #ffdd00;
+  --jfs-yellow-80:   #ffe433;
+  --jfs-yellow-60:   #ffeb66;
+  --jfs-yellow-40:   #fff199;
+  --jfs-yellow-20:   #fff8cc;
+
+  /* Neutral — Dark Grey (PMS 445) */
+  --jfs-grey:        #575756;
+  --jfs-grey-80:     #797978;
+  --jfs-grey-60:     #9b9b9a;
+  --jfs-grey-40:     #bcbcbb;
+  --jfs-grey-20:     #dedede;
+
+  /* Neutral — Cool Grey (PMS 421) */
+  --jfs-coolgrey:    #b1b3b6;
+  --jfs-coolgrey-80: #c1c2c5;
+  --jfs-coolgrey-60: #d0d1d3;
+  --jfs-coolgrey-40: #e0e1e2;
+  --jfs-coolgrey-20: #efeff0;
+
+  --jfs-white:       #ffffff;
+  --jfs-black:       #000000;
+
+  /* ---------- SEMANTIC TOKENS ---------- */
+  --bg:              #ffffff;
+  --bg-alt:          #f5f6f7;      /* very light neutral surface */
+  --bg-inverse:      #0065a4;      /* primary blue hero/panel */
+  --bg-dark:         #003a60;      /* deep blue for navs/footers (derived) */
+  --bg-hero-navy:    #0f2540;      /* dashboard hero band (from Dayforce mock) */
+  --bg-app-canvas:   #f4f5f6;      /* product app canvas grey */
+  --bg-icon-tile:    #eef0f2;      /* circular icon tile bg (from Dayforce mock) */
+  --avatar-sage:     #d1ddd1;      /* avatar default (from Dayforce mock) */
+
+  --fg1:             #0c1a24;      /* primary text on light — near-black with blue cast */
+  --fg2:             #575756;      /* PMS 445, body copy on light */
+  --fg3:             #b1b3b6;      /* PMS 421, tertiary/meta */
+  --fg-on-dark:      #ffffff;
+  --fg-on-dark-soft: #cce0ed;
+
+  --border:          #dedede;
+  --border-strong:   #b1b3b6;
+  --divider:         #e9ecef;
+
+  --link:            #0065a4;
+  --link-hover:      #004d7d;
+
+  --accent:          #ffdd00;      /* highlights, call-outs, bullet dots */
+  --accent-on:       #0c1a24;      /* text ON yellow */
+
+  /* States (derived; PDF doesn't define but these align with the palette) */
+  --success:         #3f7a3f;
+  --warning:         #d98f00;
+  --danger:          #b3261e;
+  --info:            var(--jfs-blue);
+
+  /* Focus ring — WCAG contrast on white and blue */
+  --focus-ring:      0 0 0 3px rgba(0, 101, 164, 0.35);
+
+  /* ---------- TYPE ----------
+     "Helvetica JF" is our licensed Helvetica served from fonts/ (see @font-face above).
+     Per the June 2025 interim guidelines: Helvetica for print/marketing, Arial for
+     digital (web, intranet, email, PowerPoint). We use Helvetica JF everywhere it
+     is available and fall back to Arial on systems that couldn't load the webfont.
+     */
+  --font-display:    "Helvetica JF", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body:       "Helvetica JF", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --font-mono:       ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --weight-thin:     300;   /* licensed Helvetica JF ships 300–700; thin is aliased to 300 */
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-bold:     700;
+
+  /* Type scale — conservative corporate, matches PDF hierarchy
+     (Heading / Subheading / Body / Caption) */
+  --fs-display:      clamp(40px, 5vw, 64px);   /* hero/cover */
+  --fs-h1:           clamp(28px, 3.4vw, 44px);
+  --fs-h2:           clamp(22px, 2.4vw, 32px);
+  --fs-h3:           18px;
+  --fs-body:         15px;
+  --fs-small:        13px;
+  --fs-caption:      12px;
+
+  --lh-tight:        1.1;
+  --lh-heading:      1.2;
+  --lh-body:         1.55;
+
+  --tracking-tight:  -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-caps:   0.08em;
+
+  /* ---------- SPACING ---------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+
+  /* ---------- RADII ----------
+     JF brand is square/corporate. Use very subtle radii only. */
+  --radius-sm: 2px;      /* hairline / buttons / tags */
+  --radius-md: 4px;      /* default on marketing surfaces */
+  --radius-lg: 8px;      /* product cards (per Dayforce mock) */
+  --radius-xl: 14px;     /* hero/elevated surfaces */
+  --radius-pill: 999px;  /* name chips / avatars */
+
+  /* ---------- SHADOWS ---------- */
+  --shadow-sm:  0 1px 2px rgba(12, 26, 36, 0.06);
+  --shadow-md:  0 2px 6px rgba(12, 26, 36, 0.08), 0 1px 2px rgba(12,26,36,0.05);
+  --shadow-lg:  0 8px 24px rgba(12, 26, 36, 0.10);
+  --shadow-inset: inset 0 1px 0 rgba(255,255,255,0.4);
+
+  /* ---------- LAYOUT ---------- */
+  --container: 1200px;
+  --container-narrow: 880px;
+  --header-h: 72px;
+
+  /* ---------- MOTION ----------
+     JF brand is measured & professional — subtle, short transitions. */
+  --ease-standard: cubic-bezier(.2,.0,.2,1);
+  --ease-out: cubic-bezier(.2,.6,.2,1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 320ms;
+
+  /* ---------- GRADIENT (OSOF heritage wave — used sparingly) ---------- */
+  --grad-heritage: linear-gradient(110deg, #e85c2a 0%, #c94a3d 25%, #7c4a6e 55%, #2d6680 80%, #1b8a9e 100%);
+}
+
+/* ===================== ELEMENT DEFAULTS ===================== */
+html { color: var(--fg1); background: var(--bg); }
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg1);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--fg1);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-tight);
+  font-weight: var(--weight-bold);
+  margin: 0 0 var(--space-4);
+  /* Guidelines: sentence case — don't ALL-CAPS by default */
+  text-transform: none;
+}
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); font-weight: var(--weight-light); letter-spacing: -0.005em; }
+h3 { font-size: var(--fs-h3); font-weight: var(--weight-bold); }
+
+p  { margin: 0 0 var(--space-4); color: var(--fg2); max-width: 68ch; text-wrap: pretty; }
+a  { color: var(--link); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; transition: color var(--dur-fast) var(--ease-standard); }
+a:hover { color: var(--link-hover); }
+a:focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: 2px; }
+
+small { font-size: var(--fs-small); color: var(--fg2); }
+.caption { font-size: var(--fs-caption); color: var(--fg3); letter-spacing: var(--tracking-wide); }
+
+/* Eyebrow — small, uppercase, yellow-accented used sparingly */
+.eyebrow {
+  font-size: 11px;
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--jfs-blue);
+}
+
+/* Display/hero heading style (Helvetica Neue Thin, as seen on PDF covers) */
+.display {
+  font-family: var(--font-display);
+  font-weight: var(--weight-thin);
+  font-size: var(--fs-display);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--fg1);
+}
+
+/* Subtle horizontal rule used in lock-up compositions (e.g. JFS dark strap) */
+.rule {
+  height: 1px;
+  background: var(--border-strong);
+  border: 0;
+  margin: var(--space-3) 0;
+}
+
+/* Bullet list — dot bullets, no punctuation per guidelines */
+ul.jfs { list-style: none; padding: 0; margin: 0; }
+ul.jfs li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: var(--space-2);
+  color: var(--fg2);
+}
+ul.jfs li::before {
+  content: "";
+  position: absolute;
+  left: 2px; top: 0.6em;
+  width: 6px; height: 6px;
+  background: var(--jfs-blue);
+  border-radius: 50%;
+}
