@@ -189,7 +189,7 @@ button { font-family: inherit; }
 .drawer__section-btn.is-open .drawer__section-chev { transform: rotate(90deg); }
 
 .drawer__screens {
-  padding: 4px 0 8px 48px;
+  padding: 4px 0 8px 18px;
   display: flex; flex-direction: column;
   gap: 2px;
 }
@@ -211,6 +211,7 @@ button { font-family: inherit; }
   color: #fff;
   background: rgba(255,255,255,.06);
   padding-left: 8px;
+  margin-left: -8px;
 }
 .drawer__screen-dot {
   width: 8px; height: 8px;
@@ -242,7 +243,9 @@ button { font-family: inherit; }
 .drawer-toggle, .drawer-close, .drawer-scrim { display: none; }
 
 @media (max-width: 880px) {
-  .app { grid-template-columns: 1fr; }
+  .app,
+  .app.is-collapsed { grid-template-columns: 1fr; }
+  .main { grid-column: 1 / -1; }
   .drawer {
     position: fixed; left: 0; top: 0;
     width: 88%; max-width: 320px;
@@ -1484,7 +1487,7 @@ button { font-family: inherit; }
 }
 .b-hero__eyebrow {
   font-size: 12px; font-weight: 700;
-  color: var(--tw-accent);
+  color: var(--jfd-yellow);
   letter-spacing: .14em; text-transform: uppercase;
   margin-bottom: 14px;
   display: flex; align-items: center; gap: 12px;
@@ -1492,7 +1495,7 @@ button { font-family: inherit; }
 .b-hero__eyebrow::before {
   content: "";
   width: 28px; height: 2px;
-  background: var(--tw-accent);
+  background: var(--jfd-yellow);
 }
 .b-hero__title {
   font-family: var(--font-display);

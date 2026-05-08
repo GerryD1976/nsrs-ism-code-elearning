@@ -169,7 +169,7 @@ function App() {
           )}
           {!t.showProgress && <div style={{flex: 1}}></div>}
           <div className="navbar__btns">
-            <button className="navbar__btn" onClick={() => goToScreen(allScreens[0].key)}>Main menu</button>
+            <button className="navbar__btn" onClick={() => goToScreen(allScreens[0].key)}>Restart</button>
             <button className="navbar__btn" onClick={goPrev} disabled={activeIdx === 0}>‹ Previous</button>
             <button className="navbar__btn navbar__btn--primary" onClick={goNext} disabled={activeIdx === allScreens.length - 1}>
               {activeIdx === allScreens.length - 1 ? "Finished" : "Next ›"}
@@ -273,11 +273,11 @@ function Drawer({ open, collapsed, onCollapseToggle, sections, sectionStats, act
 function RegularScreen({ screen }) {
   return (
     <>
-      <div className="screen-head">
+      {/* <div className="screen-head">
         {screen.eyebrow && <div className="screen-head__eyebrow">{screen.eyebrow}</div>}
         <h1 className="screen-head__title" dangerouslySetInnerHTML={{__html: screen.title}}></h1>
         {screen.lede && <p className="screen-head__lede">{screen.lede}</p>}
-      </div>
+      </div> */}
       {screen.blocks && screen.blocks.map((b, i) => {
         const Comp = window[b.kind];
         if (!Comp) return <div key={i}>Unknown block: {b.kind}</div>;

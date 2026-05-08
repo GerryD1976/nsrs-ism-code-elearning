@@ -31,10 +31,10 @@ const COURSE = {
         {
           id: "objectives",
           title: "What you'll learn",
-          eyebrow: "Learning objectives",
-          lede: "We'll look at the main points of the ISM Code — enough to give you confidence in audits, conversations and your own day-to-day decisions.",
+    
           blocks: [
             { kind: "Hero", props: { variant: "blueprint", art: "compass", eyebrow: "Section 01 · Introduction", title: "Seven topics. <b>One Code.</b>", sub: "Tap each card below to see what we'll cover. The order matches the menu — pick up where you left off any time." } },
+            { kind: "Text", props: { heading: "Learning objectives", body: ["We'll look at the main points of the ISM Code — enough to give you confidence in audits, conversations and your own day-to-day decisions."]} },
             { kind: "ClickReveal", props: { items: [
               { icon: "1", title: "Origins of the Code", reveal: "How two major maritime incidents — Herald of Free Enterprise and Exxon Valdez — pushed the IMO to adopt the ISM Code in 1988." },
               { icon: "2", title: "SOLAS Chapter 9", reveal: "The legal mechanism that makes the ISM Code binding on shipowners and operators worldwide." },
@@ -59,12 +59,14 @@ const COURSE = {
           id: "ism-origins",
           title: "How the <b>ISM Code</b> came to be",
           eyebrow: "Origins",
+          /* CLIENT FLAG: Source slide 6 says "Prior to 1998" — appears to be a typo. Module uses "late 1980s" which is factually correct. Confirm client approval before publishing */
           lede: "Prior to the late 1980s, the IMO had become increasingly concerned about the safe operation of shipping on the high seas. Two events forged and shaped the Code — one before its implementation, and one after that proved to be the last straw.",
           blocks: [
             { kind: "Hero", props: { variant: "photo-bottom", image: "design/assets/ocean.jpg", eyebrow: "Section 02 · Origins", title: "How the <b>ISM Code</b><br/>came to be.", sub: "Two disasters, two years apart — and an industry that finally agreed safety couldn't be left to individuals." } },
+            // TODO: Replace with actual video asset or remove block if no video planned
             { kind: "Video", props: { title: "The events that brought in the ISM Code", sub: "Watch · 2 min", duration: "02:01 / 02:01", placeholderLabel: "Intro video", poster: "design/assets/horizon-sea.jpg" } },
             { kind: "Timeline", props: { events: [
-              { year: "1987", caption: "Herald of Free Enterprise", title: "Herald of Free Enterprise capsizes", body: "The roll-on/roll-off ferry capsized minutes after leaving Zeebrugge. Investigations pointed not just to a faulty bow door but to systemic failures in how the operating company managed safety. The disaster gave the IMO momentum it had been looking for." },
+              { year: "1987", caption: "Herald of Free Enterprise", title: "Herald of Free Enterprise capsizes", body: "On 6 March 1987, the Ro-Ro ferry Herald of Free Enterprise capsized minutes after leaving Zeebrugge, killing 193 people. The immediate cause was a bow door left open — the assistant boatswain responsible for closing it was asleep. But the public inquiry led by Lord Justice Sheen found that shore management, Townsend Car Ferries Ltd., was equally blameworthy. Memo after memo raising safety concerns had been ignored. Sheen's report concluded that the company was 'infected from top to bottom with the disease of sloppiness.' The case became the catalyst for systemic change." },
               { year: "1988", caption: "Code enacted", title: "ISM Code is adopted", body: "On 1 July 1988, amendments to the SOLAS Convention introduced Chapter 9, requiring shipowners and operators to comply with the ISM Code. Safety was no longer a matter of individual seamanship — it was a managed system." },
               { year: "1989", caption: "Exxon Valdez", title: "Exxon Valdez runs aground", body: "The grounding in Prince William Sound caused one of the most damaging oil spills in history. It became the 'last straw' — a public, political event that cemented the case for the ISM Code as international law." },
             ]}},
@@ -78,12 +80,8 @@ const COURSE = {
           lede: "A worked example of why a managed safety system — not just a competent crew — became non-negotiable.",
           blocks: [
             { kind: "Hero", props: { variant: "gradient-warm", art: "anchor", eyebrow: "1989 · Last straw", title: "<b>Exxon Valdez</b> — the case that closed the argument.", sub: "A grounding in Prince William Sound and ~11 million gallons of crude oil. The chain of failures the inquiry uncovered is exactly what the ISM Code is designed to surface — before, not after." } },
-            { kind: "Illus", props: { tone: "paper", art: "swordShield", heading: "What happened", body: "The Exxon Valdez was an oil tanker bound from Alaska to California. Shortly after midnight on 24 March 1989 it ran aground on Bligh Reef. The investigation found fatigue, navigational shortcuts, gaps in supervision and training — the kind of latent risk the Code is designed to flush out." } },
-            { kind: "FlipCards", props: { cards: [
-              { icon: "iconSword", front: "A sword", title: "If you don't comply…", back: "Failure to comply with the ISM Code can cause serious harm — to people, to the environment, and to the company. It can ultimately defeat an organisation." },
-              { icon: "iconShield", front: "A shield", title: "If you do comply…", back: "When best efforts have been documented, audited and followed, the Code protects individuals and the company in the event an accident still occurs." },
-              { icon: "iconStandard", front: "A standard", title: "Why it matters", back: "The Code provides an international standard for safe management and operation of ships — the safety of life, of ships, and the protection of the environment." },
-            ]}}
+            // TODO: Replace with NSRS/JFD-specific photography
+            { kind: "Illus", props: { tone: "paper", art: "swordShield", heading: "What happened", body: "The Exxon Valdez was an oil supertanker bound from Alaska to Long Beach, California. At 12:04 a.m. on 24 March 1989, it struck Bligh Reef in Prince William Sound, spilling more than 10 million US gallons (37,000 tonnes) of crude oil over the days that followed — one of the most damaging spills in history. The investigation found fatigue, navigational shortcuts, and gaps in supervision and training — the kind of latent risk the Code is designed to surface before an incident, not after." } },
           ]
         }
       ]
@@ -120,6 +118,7 @@ const COURSE = {
             { kind: "FlipCards", props: { cards: [
               { icon: "iconSword", front: "As a sword", title: "If you don't comply…", back: "Failure to comply with the ISM Code can be wielded against an individual or a company. Investigators, regulators and insurers will use the Code to test whether something should have been prevented." },
               { icon: "iconShield", front: "As a shield", title: "If you do comply…", back: "Comply, document, audit and act, and the Code becomes the strongest defence you have. It demonstrates that you and the company exercised proper, planned, evidenced care." },
+              { icon: "iconStandard", front: "A standard", title: "Why it matters", back: "The Code provides an international standard for safe management and operation of ships — the safety of life, of ships, and the protection of the environment." },
             ]}},
           ]
         },
@@ -169,8 +168,8 @@ const COURSE = {
           blocks: [
             { kind: "Hero", props: { variant: "paper", art: "certificates", eyebrow: "Document of Compliance", title: "The <b>company's</b> certificate.", sub: "Says the operator knows how to run a safe ship. Five-year validity — with a verification audit every twelve months." } },
             { kind: "Tabs", props: { tabs: [
-              { label: "What it is", heading: "Issued to the company", body: "The DOC certifies that the company's Safety Management System has been audited and found to comply with the ISM Code, for the types of ship listed on the certificate." },
-              { label: "Validity", heading: "Five years, with annual verification", body: "The DOC is valid for up to five years. It is subject to an annual verification audit — miss the audit window and the certificate lapses." },
+              { label: "What it is", heading: "Issued to the company", body: "The DOC certifies that the company's Safety Management System has been audited and found to comply with the ISM Code, for the types of ship listed on the certificate. The DOC is issued by the Flag State, or by an organisation recognised by the Flag State." },
+              { label: "Validity", heading: "Five years, with annual verification", body: "The DOC is valid for up to five years. It is subject to an annual verification audit carried out by the Flag State or an organisation recognised by the Flag State — miss the audit window and the certificate lapses." },
               { label: "What audits look at", heading: "Top-tier evidence", body: "Audits review top-tier policy, procedure manuals, internal audit programmes, management review records, near-miss reporting, and the work of the Designated Person Ashore." },
             ]}},
           ]
@@ -183,8 +182,8 @@ const COURSE = {
           blocks: [
             { kind: "Hero", props: { variant: "gradient", art: "submersible", eyebrow: "Safety Management Certificate", title: "The <b>ship's</b> certificate.", sub: "Says this particular vessel is being operated in line with the company's approved SMS. Five years, intermediate audit at the midpoint." } },
             { kind: "Tabs", props: { tabs: [
-              { label: "What it is", heading: "Issued to the ship", body: "The SMC certifies that the operation of the ship is in accordance with the company's approved Safety Management System." },
-              { label: "Validity", heading: "Five years, with intermediate audit", body: "The SMC is valid for up to five years. An intermediate audit between the second and third anniversary confirms that practice on board still matches what is documented." },
+              { label: "What it is", heading: "Issued to the ship", body: "The SMC certifies that the operation of the ship is in accordance with the company's approved Safety Management System. It is issued to the ship by the Flag State, or by an organisation recognised by the Flag State, once it has been verified that the company and its shipboard management are operating in accordance with the approved SMS." },
+              { label: "Validity", heading: "Five years, with interim audit", body: "The SMC is valid for up to five years. An interim audit is carried out between the second and third year by the Flag State to confirm that practice on board still matches what is documented." },
               { label: "If it lapses", heading: "The ship cannot legally trade", body: "Without a valid SMC the vessel cannot operate at sea under the Code. Port State Control may detain it; insurers may withdraw cover." },
             ]}},
           ]
@@ -228,24 +227,15 @@ const COURSE = {
           eyebrow: "Code content",
           lede: "A practical map of the elements every Safety Management System must include.",
           blocks: [
-            { kind: "Hero", props: { variant: "paper", art: "smsHandbook", eyebrow: "Section 05 · Compliance", title: "What's <b>in</b> the Code.", sub: "Twelve elements. Each one shows up somewhere in the routines, paperwork and decisions on board." } },
-            { kind: "CodeTable", props: {
-              headers: ["Element", "What it covers"],
-              rows: [
-                ["1", "General — definitions, objectives, application"],
-                ["2", "Safety and environmental protection policy"],
-                ["3", "Company responsibilities and authority"],
-                ["4", "Designated Person(s)"],
-                ["5", "Master's responsibility and authority"],
-                ["6", "Resources and personnel"],
-                ["7", "Shipboard operations"],
-                ["8", "Emergency preparedness"],
-                ["9", "Reports and analysis of non-conformities, accidents and hazardous occurrences"],
-                ["10", "Maintenance of the ship and equipment"],
-                ["11", "Documentation"],
-                ["12", "Company verification, review and evaluation"],
-              ]
-            }}
+            { kind: "Hero", props: { variant: "paper", art: "smsHandbook", eyebrow: "Section 05 · Compliance", title: "What's <b>in</b> the Code.", sub: "Six functional requirements. Each one shows up somewhere in the routines, paperwork and decisions on board." } },
+            { kind: "ClickReveal", props: { items: [
+              { icon: "1", title: "Safety and environmental policy", reveal: "Every SMS must begin with a clear policy — the company's commitment to safety and environmental protection, visible and owned at the highest level." },
+              { icon: "2", title: "Instructions and procedures", reveal: "Safe working procedures and practices for the operation of ships, and protection of the environment, in compliance with relevant international and Flag State legislation." },
+              { icon: "3", title: "Defined levels of authority and communication", reveal: "Clear lines of authority and communication between shore and shipboard personnel — everyone must know who they report to, and who they can escalate to." },
+              { icon: "4", title: "Reporting accidents and non-conformities", reveal: "Procedures for reporting accidents and non-conformities with the provisions of the Code — the near-miss, the ER, the CAR. These reports close the loop." },
+              { icon: "5", title: "Emergency preparedness", reveal: "Procedures to prepare for and respond to emergency situations — risk-assessed, documented and practised." },
+              { icon: "6", title: "Internal audits and management reviews", reveal: "The Code requires the SMS to audit itself — internal audits, Master's review, management review — to confirm that what is documented is what is done." },
+            ]}}
           ]
         },
         {
@@ -260,7 +250,10 @@ const COURSE = {
               { eyebrow: "Records", title: "Logs that prove what happened", body: "Logs, records, near-miss reports and Engineering Reports (ERs) form the audit trail that demonstrates the SMS is being lived, not shelved.", imgLabel: "Logs & records" },
               { eyebrow: "Reviews", title: "Management review and audits", body: "Internal ISM audits, the Master's Audit, external Flag State and Port State Control inspections together close the loop.", imgLabel: "Management review" },
               { eyebrow: "People", title: "Top-tier commitment", body: "The Code starts with management. Without visible top-tier commitment, no procedure manual will hold up under audit pressure.", imgLabel: "Crew briefing" },
-            ]}}
+              { eyebrow: "Risk assessment", title: "Risk-assessing what we do", body: "The Code requires every vessel to risk-assess its normal working procedures and — based on that assessment — have safe working practices in place. Emergency responses must also be risk-assessed, with documented emergency procedures.", imgLabel: "Risk assessment" },
+              { eyebrow: "Planned maintenance", title: "Planned maintenance and safety meetings", body: "The ISM Code requires a planned maintenance system for the vessel, and regular safety meetings. These are not administrative box-ticking — they are the Code working in practice.", imgLabel: "Planned maintenance" },
+            ]}},
+            { kind: "Callout", props: { label: "Safety culture", body: "The company should have a good safety culture that is understood and implemented throughout all levels of the organisation — from the board to the crew on board." } },
           ]
         },
         {
@@ -275,6 +268,7 @@ const COURSE = {
               { q: "A Top Tier Policy Manual", a: <>Our top tier comprises the <b>SEMP</b> (Safety and Environmental Management Plan), <b>CMP</b>, <b>MMP</b>, <b>SECR</b>, <b>QMP</b> and the <b>MOSHIP Handbook</b>. Together they set out how we behave.</> },
               { q: "A Procedures Manual", a: <>Documents what is actually done on board, in normal operations and in emergencies — <b>SOPs</b>, <b>EOPs</b>, OP Guidance Volume 2, logs, records, pre-dives, post-dives.</> },
               { q: "Internal and external audits", a: <>Internal ISM audits, the Master's Audit, external Flag State and Port State Control inspections — used to verify that the ship is doing what is documented.</> },
+              // CLIENT VERIFY: Source spells "Cotten" — confirm correct spelling before publishing
               { q: "A Designated Person Ashore (DP)", a: <>The DP is the link between ships and shore staff and verifies SMS implementation. For NSRS that responsibility is held by <b>Greg Cotton</b>, <b>Rick Smith</b> and <b>Piers Barker</b>.</> },
               { q: "A non-conformity / corrective action system", a: <>Safety Reports, Near Misses, ERs and CARs identify where actual practice diverges from documented practice — and trigger corrective action.</> },
               { q: "Regular management reviews", a: <>The Audit Schedule, H&S Committee, NSRS Management Meetings and PSEC together provide the regular review cycle the Code requires.</> },
@@ -294,7 +288,7 @@ const COURSE = {
         {
           id: "master-pic",
           title: "The Master / Pilot in Charge",
-          eyebrow: "OP Guide Vol 2 · Section 5",
+          eyebrow: "ISM Code · Section 5 & Regulation 11",
           lede: "The nominated pilot for the dive — recorded in the authorised pre-dive documentation — is the Pilot in Charge, and is deemed to be the Master of the SRV.",
           blocks: [
             { kind: "Hero", props: { variant: "gradient", art: "compass", eyebrow: "Section 06 · Roles", title: "The <b>Master</b> /<br/>Pilot in Charge.", sub: "Authority at sea is supreme and overriding. The Code is explicit about it — and so is OP Guide Vol 2, Section 5." } },
@@ -310,7 +304,7 @@ const COURSE = {
                   <li>Monitoring and reviewing the SMS, reporting any deficiencies to the JFD Head of Capability / JFD Global Head of SERS</li>
                   <li>Preparing the annual Master's review of the SMS</li>
                 </ul> },
-              { label: "Reading", heading: "OP Guidance Volume 2", body: "The full responsibilities of the Master are set out in OP Guide Vol 2 — required reading. Section 5 of the ISM Code and Regulation 11 of the Code together establish the Master's authority." },
+              { label: "Reading", heading: "OP Guidance Volume 2", body: "The Pilot in Charge is deemed to be the Master of the SRV in accordance with Section 5 of the ISM Code and Regulation 11 of the Code. The full practical responsibilities of the Master in the NSRS context are set out in OP Guidance Volume 2 — required reading for all qualified personnel." },
             ]}},
           ]
         },
@@ -336,13 +330,15 @@ const COURSE = {
           lede: "The Code requires a Designated Person ashore to act as the link between ships and shore — and to verify SMS implementation.",
           blocks: [
             { kind: "Hero", props: { variant: "blueprint", art: "orgChart", eyebrow: "Designated Person Ashore", title: "<b>The link</b><br/>between ship and shore.", sub: "For NSRS the DP responsibility is shared across three named individuals — always-on coverage, and a route for safety concerns that bypasses normal management channels if it has to." } },
-            { kind: "Illus", props: { tone: "paper", art: "orgChart", heading: "Three points of contact", body: "Greg Cotton, Rick Smith and Piers Barker share the DP role across NSRS. Crew can — and should — escalate safety concerns to any of them at any time." } },
+            /* CLIENT VERIFY: "Greg Cotton" below — source spells "Cotten" — confirm correct spelling before publishing */
+            { kind: "Illus", props: { tone: "paper", art: "orgChart", heading: "Three points of contact", body: "To ensure the safe operation of each ship and to provide a link between the Company and those on board, every company should designate a person or persons ashore having direct access to the highest level of management. Their responsibility includes monitoring the safety and pollution prevention aspects of each ship's operation, and ensuring that adequate resources and shore-based support are applied. For NSRS, this responsibility is held jointly by Greg Cotton (JFD SERS Chief Engineer), Rick Smith, and Piers Barker — providing continuous coverage at all times." } },
             { kind: "Hotspot", props: {
               hint: "Click the markers",
               spots: [
-                { x: 24, y: 38, title: "Greg Cotton", body: "Designated Person — first point of contact for SMS verification matters during deployment." },
-                { x: 50, y: 50, title: "Rick Smith", body: "Designated Person — secondary contact, often the route for routine SMS queries." },
-                { x: 76, y: 42, title: "Piers Barker", body: "Designated Person — third named DP, ensuring continuous coverage at all times." },
+                /* CLIENT VERIFY: "Greg Cotton" below — source spells "Cotten" — confirm correct spelling before publishing */
+                { x: 24, y: 38, title: "Greg Cotton", body: "Co-Designated Person Ashore for NSRS. Responsible for monitoring safety and pollution prevention aspects of NSRS operations, ensuring adequate resources and shore-based support, and acting as the link between ship and shore. Crew can escalate safety concerns to any of the three DPs at any time." },
+                { x: 50, y: 50, title: "Rick Smith", body: "Co-Designated Person Ashore for NSRS. Responsible for monitoring safety and pollution prevention aspects of NSRS operations, ensuring adequate resources and shore-based support, and acting as the link between ship and shore. Crew can escalate safety concerns to any of the three DPs at any time." },
+                { x: 76, y: 42, title: "Piers Barker", body: "Co-Designated Person Ashore for NSRS. Responsible for monitoring safety and pollution prevention aspects of NSRS operations, ensuring adequate resources and shore-based support, and acting as the link between ship and shore. Crew can escalate safety concerns to any of the three DPs at any time." },
               ]
             }},
           ]
@@ -362,13 +358,14 @@ const COURSE = {
           eyebrow: "Audit · preparation",
           lede: "When the MCGA arrives, the question is rarely 'do we have a manual?' — it's 'are you doing what the manual says?'",
           blocks: [
-            { kind: "Hero", props: { variant: "paper", art: "checklist", eyebrow: "Section 07 · Audit", title: "Your part in the <b>MCGA audit</b>.", sub: "The auditor isn't there to read the manual. They're there to see whether you live by it." } },
+            { kind: "Hero", props: { variant: "paper", art: "checklist", eyebrow: "Section 07 · Audit", title: "Your part in the <b>MCGA audit</b>.", sub: "The MCGA (Maritime and Coastguard Agency) auditor isn't there to read the manual. They're there to see whether you live by it." } },
             { kind: "ClickReveal", props: { items: [
               { icon: "1", title: "Read the Code", reveal: "Available in the HQ or online. Knowing what the Code requires is the foundation — auditors will assume you've read it." },
               { icon: "2", title: "Configuration & maintenance", reveal: "Understand your part in the configuration and maintenance of NSRS. If you sign for it, you own it." },
               { icon: "3", title: "Operations", reveal: "Understand your part in the operation of NSRS. Pre-dive, dive, post-dive — the Code lives in those routines." },
               { icon: "4", title: "Stay inside the SMS", reveal: "Understand your part and operate within the boundaries of the JFD/NSRS Safety Management System. If you can't, raise it — don't work around it." },
             ]}},
+            { kind: "Callout", props: { label: "Read the Code", body: "The full ISM Code is available in the JFD HQ and online. Read it — the auditor will assume you have." } },
           ]
         },
         {
@@ -393,6 +390,7 @@ const COURSE = {
               <p>Each is logged, assigned an owner, and tracked to closure inside the SMS. A major non-conformity may suspend the SMC until corrective action is verified — which is why catching gaps internally, before a formal audit, is the whole point.</p>
               <p>Speak to your Designated Person early. The Code rewards transparency.</p>
             </> } },
+            { kind: "Callout", props: { label: "When it goes wrong", body: <>The consequences of not operating within the bounds of the SMS are catastrophic and far-reaching at both the individual and collective level. The resulting investigation by the <b>MAIB (Marine Accident Investigation Branch)</b> or <b>HSE</b> will be rigorous, with all documentation and actions scrutinised. Use the Code as a shield: <b>See It. Own It. Act on It.</b></> } },
           ]
         },
         {
